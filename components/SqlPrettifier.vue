@@ -1,10 +1,10 @@
-<!-- Please remove this file from your project -->
 <template lang="pug">
 .sql-prettifier
   .row.m8.alert.alert-danger(v-if='err' v-text='err')
   .row.m8.float-right
     button.m2(@click.preventDefault.capture='format') Format
     button.m2(@click.preventDefault.capture='minify') Minify
+    button.m2(@click.preventDefault.capture='filter') Filter
     button.m2(@click.preventDefault.capture='clear') Clear
     button.m2(:disabled='history.length === 0' :class='{disabled: history.length == 0}' @click.preventDefault.capture='undo') Undo
   .row.m8
@@ -60,7 +60,7 @@ export default {
         lang: 'sql',
         linesBetweenQueries: 2,
         uppercase: true,
-        keywordPosition: 'tenSpaceLeft',
+        keywordPosition: 'standard',
         // newline: {
         //  "mode": "always" | "itemCount" | "lineWidth" | "hybrid" | "never",
         //  "itemCount"?: number // only used if newline.mode is itemCount or hybrid
@@ -112,6 +112,15 @@ export default {
       value = value.replace(whitespaceRegEx, ' ')
       value = value.replace(leftparenthesesRegEx, '(')
       value = value.replace(rightparenthesesRegEx, ')')
+      value = value + '\n'
+      this.value = value
+    },
+    filter () {
+      this.pushHistory()
+      let { value } = this
+      value = value || ''
+      value = value.replace(/\\'/g, '\'')
+      value = value.replace(/"/g, '')
       value = value + '\n'
       this.value = value
     },

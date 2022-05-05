@@ -2,7 +2,9 @@
   "name": "prettify-sql",
   "version": "1.0.0",
   "private": true,
-  "engines" : { "node" : ">=14" },
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
