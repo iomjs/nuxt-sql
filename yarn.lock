@@ -7045,10 +7045,10 @@ prepend-http@^1.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
-prettier-sql@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/prettier-sql/-/prettier-sql-5.1.0.tgz#cb5dcea3904ff628abf7ebf1ca61a4c1eb7779d3"
-  integrity sha512-85IvpNNDhECsIjb7rImLo5JIIcwssgx63NPbnlEUtsjHMN28Aik8xmFYLXesq09oGS3KX7COfINmKttVPvRrCw==
+prettier-sql@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/prettier-sql/-/prettier-sql-5.1.1.tgz#48bb66a10858d13d478bfc693a19f31260a7d44f"
+  integrity sha512-LBktl+zf8ClZTsbPGbK+5a3khsmsKdYbR1keOq1J2oGCzAXP64m27ZBnuWBFDLXV10i6xTfClV+nT9ecH8PMiA==
   dependencies:
     argparse "^2.0.1"
 
