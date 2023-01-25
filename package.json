@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "core-js": "^3.25.5",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.1.0",
     "prettier-sql": "^5.1.1",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
