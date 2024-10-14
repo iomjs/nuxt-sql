@@ -46,8 +46,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(eslint@8.57.1)
       eslint-plugin-vue:
-        specifier: ^9.6.0
-        version: 9.28.0(eslint@8.57.1)
+        specifier: ^9.29.0
+        version: 9.29.0(eslint@8.57.1)
       pug:
         specifier: ^3.0.2
         version: 3.0.3
@@ -2558,8 +2558,8 @@ packages:
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
 
-  eslint-plugin-vue@9.28.0:
-    resolution: {integrity: sha512-ShrihdjIhOTxs+MfWun6oJWuk+g/LAhN+CiuOl/jjkG3l0F2AuK5NMTaWqyvBgkFtpYmyks6P4603mLmhNJW8g==}
+  eslint-plugin-vue@9.29.0:
+    resolution: {integrity: sha512-hamyjrBhNH6Li6R1h1VF9KHfshJlKgKEg3ARbGTn72CMNDSMhWbgC7NdkRDEh25AFW+4SDATzyNM+3gWuZii8g==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -7217,8 +7217,8 @@ snapshots:
       time-fix-plugin: 2.0.7(webpack@4.47.0)
       ufo: 1.5.4
       upath: 2.0.1
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.95.0))(webpack@4.47.0)
-      vue-loader: 15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@5.95.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@4.47.0))(webpack@4.47.0)
+      vue-loader: 15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@4.47.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0)
       vue-style-loader: 4.1.3
       vue-template-compiler: 2.7.16
       watchpack: 2.4.2
@@ -9040,7 +9040,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-vue@9.28.0(eslint@8.57.1):
+  eslint-plugin-vue@9.29.0(eslint@8.57.1):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.1)
       eslint: 8.57.1
@@ -12248,7 +12248,7 @@ snapshots:
 
   urix@0.1.0: {}
 
-  url-loader@4.1.1(file-loader@6.2.0(webpack@5.95.0))(webpack@4.47.0):
+  url-loader@4.1.1(file-loader@6.2.0(webpack@4.47.0))(webpack@4.47.0):
     dependencies:
       loader-utils: 2.0.4
       mime-types: 2.1.35
@@ -12324,7 +12324,7 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@5.95.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0):
+  vue-loader@15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@4.47.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)(pug@3.0.3)
       css-loader: 5.2.7(webpack@4.47.0)
