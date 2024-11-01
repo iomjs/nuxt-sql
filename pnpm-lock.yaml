@@ -27,8 +27,8 @@ importers:
         specifier: ^2.6.14
         version: 2.7.16
       webpack:
-        specifier: ^5.74.0
-        version: 5.95.0
+        specifier: ^5.96.0
+        version: 5.96.0
     devDependencies:
       '@babel/eslint-parser':
         specifier: ^7.19.1
@@ -38,7 +38,7 @@ importers:
         version: 10.0.0(eslint@8.57.1)
       '@nuxtjs/eslint-module':
         specifier: ^3.1.0
-        version: 3.1.0(eslint@8.57.1)(webpack@5.95.0)
+        version: 3.1.0(eslint@8.57.1)(webpack@5.96.0)
       eslint:
         specifier: ^8.25.0
         version: 8.57.1
@@ -59,7 +59,7 @@ importers:
         version: 1.79.4
       sass-loader:
         specifier: '10'
-        version: 10.5.2(sass@1.79.4)(webpack@5.95.0)
+        version: 10.5.2(sass@1.79.4)(webpack@5.96.0)
 
 packages:
 
@@ -1340,11 +1340,6 @@ packages:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
     engines: {node: '>= 0.6'}
 
-  acorn-import-attributes@1.9.5:
-    resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
-    peerDependencies:
-      acorn: ^8
-
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -1366,6 +1361,11 @@ packages:
 
   acorn@8.12.1:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  acorn@8.14.0:
+    resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -5593,8 +5593,8 @@ packages:
       webpack-command:
         optional: true
 
-  webpack@5.95.0:
-    resolution: {integrity: sha512-2t3XstrKULz41MNMBF+cJ97TyHdyQ8HCt//pqErqDvNjU9YQBnZxIHa11VXsi7F3mb5/aO2tuDxdeTPdU7xu9Q==}
+  webpack@5.96.0:
+    resolution: {integrity: sha512-gvn84AfQ4f6vUeNWmFuRp3vGERyxK4epADKTaAo60K0EQbY/YBNQbXH3Ji/ZRK5M25O/XneAOuChF4xQZjQ4xA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -7217,8 +7217,8 @@ snapshots:
       time-fix-plugin: 2.0.7(webpack@4.47.0)
       ufo: 1.5.4
       upath: 2.0.1
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.95.0))(webpack@4.47.0)
-      vue-loader: 15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@5.95.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@4.47.0))(webpack@4.47.0)
+      vue-loader: 15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@4.47.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0)
       vue-style-loader: 4.1.3
       vue-template-compiler: 2.7.16
       watchpack: 2.4.2
@@ -7308,12 +7308,12 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  '@nuxtjs/eslint-module@3.1.0(eslint@8.57.1)(webpack@5.95.0)':
+  '@nuxtjs/eslint-module@3.1.0(eslint@8.57.1)(webpack@5.96.0)':
     dependencies:
       consola: 2.15.3
       defu: 6.1.4
       eslint: 8.57.1
-      eslint-webpack-plugin: 2.7.0(eslint@8.57.1)(webpack@5.95.0)
+      eslint-webpack-plugin: 2.7.0(eslint@8.57.1)(webpack@5.96.0)
     transitivePeerDependencies:
       - webpack
 
@@ -7697,10 +7697,6 @@ snapshots:
       mime-types: 2.1.35
       negotiator: 0.6.3
 
-  acorn-import-attributes@1.9.5(acorn@8.12.1):
-    dependencies:
-      acorn: 8.12.1
-
   acorn-jsx@5.3.2(acorn@8.12.1):
     dependencies:
       acorn: 8.12.1
@@ -7714,6 +7710,8 @@ snapshots:
   acorn@7.4.1: {}
 
   acorn@8.12.1: {}
+
+  acorn@8.14.0: {}
 
   aggregate-error@3.1.0:
     dependencies:
@@ -9084,7 +9082,7 @@ snapshots:
 
   eslint-visitor-keys@3.4.3: {}
 
-  eslint-webpack-plugin@2.7.0(eslint@8.57.1)(webpack@5.95.0):
+  eslint-webpack-plugin@2.7.0(eslint@8.57.1)(webpack@5.96.0):
     dependencies:
       '@types/eslint': 7.29.0
       arrify: 2.0.1
@@ -9093,7 +9091,7 @@ snapshots:
       micromatch: 4.0.8
       normalize-path: 3.0.0
       schema-utils: 3.3.0
-      webpack: 5.95.0
+      webpack: 5.96.0
 
   eslint@8.57.1:
     dependencies:
@@ -11600,14 +11598,14 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass-loader@10.5.2(sass@1.79.4)(webpack@5.95.0):
+  sass-loader@10.5.2(sass@1.79.4)(webpack@5.96.0):
     dependencies:
       klona: 2.0.6
       loader-utils: 2.0.4
       neo-async: 2.6.2
       schema-utils: 3.3.0
       semver: 7.6.3
-      webpack: 5.95.0
+      webpack: 5.96.0
     optionalDependencies:
       sass: 1.79.4
 
@@ -12025,14 +12023,14 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
 
-  terser-webpack-plugin@5.3.10(webpack@5.95.0):
+  terser-webpack-plugin@5.3.10(webpack@5.96.0):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.34.1
-      webpack: 5.95.0
+      webpack: 5.96.0
 
   terser@4.8.1:
     dependencies:
@@ -12044,7 +12042,7 @@ snapshots:
   terser@5.34.1:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.12.1
+      acorn: 8.14.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -12248,7 +12246,7 @@ snapshots:
 
   urix@0.1.0: {}
 
-  url-loader@4.1.1(file-loader@6.2.0(webpack@5.95.0))(webpack@4.47.0):
+  url-loader@4.1.1(file-loader@6.2.0(webpack@4.47.0))(webpack@4.47.0):
     dependencies:
       loader-utils: 2.0.4
       mime-types: 2.1.35
@@ -12324,7 +12322,7 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@5.95.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0):
+  vue-loader@15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@4.47.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)(pug@3.0.3)
       css-loader: 5.2.7(webpack@4.47.0)
@@ -12527,14 +12525,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  webpack@5.95.0:
+  webpack@5.96.0:
     dependencies:
       '@types/estree': 1.0.6
       '@webassemblyjs/ast': 1.12.1
       '@webassemblyjs/wasm-edit': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
-      acorn: 8.12.1
-      acorn-import-attributes: 1.9.5(acorn@8.12.1)
+      acorn: 8.14.0
       browserslist: 4.24.0
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.1
@@ -12549,7 +12546,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(webpack@5.95.0)
+      terser-webpack-plugin: 5.3.10(webpack@5.96.0)
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
