@@ -46,8 +46,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(eslint@8.57.1)
       eslint-plugin-vue:
-        specifier: ^9.6.0
-        version: 9.28.0(eslint@8.57.1)
+        specifier: ^9.32.0
+        version: 9.32.0(eslint@8.57.1)
       pug:
         specifier: ^3.0.2
         version: 3.0.3
@@ -2558,8 +2558,8 @@ packages:
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
 
-  eslint-plugin-vue@9.28.0:
-    resolution: {integrity: sha512-ShrihdjIhOTxs+MfWun6oJWuk+g/LAhN+CiuOl/jjkG3l0F2AuK5NMTaWqyvBgkFtpYmyks6P4603mLmhNJW8g==}
+  eslint-plugin-vue@9.32.0:
+    resolution: {integrity: sha512-b/Y05HYmnB/32wqVcjxjHZzNpwxj1onBOvqW89W+V+XNG1dRuaFbNd3vT9CLbr2LXjEoq+3vn8DanWf7XU22Ug==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -8467,6 +8467,20 @@ snapshots:
       semver: 7.6.3
       webpack: 4.47.0
 
+  css-loader@5.2.7(webpack@5.95.0):
+    dependencies:
+      icss-utils: 5.1.0(postcss@8.4.47)
+      loader-utils: 2.0.4
+      postcss: 8.4.47
+      postcss-modules-extract-imports: 3.1.0(postcss@8.4.47)
+      postcss-modules-local-by-default: 4.0.5(postcss@8.4.47)
+      postcss-modules-scope: 3.2.0(postcss@8.4.47)
+      postcss-modules-values: 4.0.0(postcss@8.4.47)
+      postcss-value-parser: 4.2.0
+      schema-utils: 3.3.0
+      semver: 7.6.3
+      webpack: 5.95.0
+
   css-prefers-color-scheme@9.0.1(postcss@8.4.47):
     dependencies:
       postcss: 8.4.47
@@ -9040,7 +9054,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-vue@9.28.0(eslint@8.57.1):
+  eslint-plugin-vue@9.32.0(eslint@8.57.1):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.1)
       eslint: 8.57.1
@@ -9266,6 +9280,13 @@ snapshots:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
       webpack: 4.47.0
+
+  file-loader@6.2.0(webpack@5.95.0):
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.95.0
+    optional: true
 
   file-uri-to-path@1.0.0:
     optional: true
@@ -12255,7 +12276,7 @@ snapshots:
       schema-utils: 3.3.0
       webpack: 4.47.0
     optionalDependencies:
-      file-loader: 6.2.0(webpack@4.47.0)
+      file-loader: 6.2.0(webpack@5.95.0)
 
   url@0.11.4:
     dependencies:
@@ -12327,7 +12348,7 @@ snapshots:
   vue-loader@15.11.1(cache-loader@4.1.0(webpack@4.47.0))(css-loader@5.2.7(webpack@5.95.0))(lodash@4.17.21)(pug@3.0.3)(vue-template-compiler@2.7.16)(webpack@4.47.0):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)(pug@3.0.3)
-      css-loader: 5.2.7(webpack@4.47.0)
+      css-loader: 5.2.7(webpack@5.95.0)
       hash-sum: 1.0.2
       loader-utils: 1.4.2
       vue-hot-reload-api: 2.3.4
