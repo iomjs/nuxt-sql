@@ -31,6 +31,9 @@
       th Keyword Position:
       td: select.m2(v-model='formatterConfig.keywordPosition')
         option(v-for="option in $options.formatterOptions.keywordPosition" :value='option.value' v-text="option.text")
+    tr
+      th Line Break Every (chars):
+      td: input.m2(type='number' v-model.number='lineBreakInterval' min='100' max='100000' placeholder='10000')
   //- .row: .col: pre {{ JSON.stringify(formatterConfig, null, 2) }}
 </template>
 
@@ -50,6 +53,7 @@ export default {
       value: '',
       history: [],
       maxHistory: 10,
+      lineBreakInterval: 10000,
       textareaConfig: {
         lang: 'pgsql',
         rows: 20,
@@ -107,12 +111,53 @@ export default {
     },
     minify () {
       this.pushHistory()
-      let { value } = this
+      let { value, lineBreakInterval } = this
       value = value || ''
       value = value.replace(whitespaceRegEx, ' ')
       value = value.replace(leftparenthesesRegEx, '(')
       value = value.replace(rightparenthesesRegEx, ')')
-      value = value + '\n'
+      
+      // Add double newlines at specified intervals, being careful not to break words or quoted strings
+      if (lineBreakInterval > 0) {
+        const result = []
+        let currentPos = 0
+        let lastBreakPos = 0
+        let inQuotes = false
+        
+        for (let i = 0; i < value.length; i++) {
+          const char = value[i]
+          if (char === '\'' || char === '"') {
+            inQuotes = !inQuotes
+          }
+          
+          if (!inQuotes && i - lastBreakPos >= lineBreakInterval) {
+            // Find the next whitespace to break on
+            let breakPos = i
+            while (breakPos < value.length && !/\s/.test(value[breakPos])) {
+              breakPos++
+            }
+            
+            if (breakPos < value.length) {
+              result.push(value.substring(currentPos, breakPos + 1) + '\n\n')
+              currentPos = breakPos + 1
+              lastBreakPos = currentPos
+              i = breakPos // Skip ahead to the break position
+            } else {
+              break // No more whitespace found, we're done
+            }
+          }
+        }
+        
+        // Add the remaining part of the string
+        if (currentPos < value.length) {
+          result.push(value.substring(currentPos))
+        }
+        
+        value = result.join('')
+      } else {
+        value = value + '\n'
+      }
+      
       this.value = value
     },
     filter () {
