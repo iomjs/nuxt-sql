@@ -6,6 +6,7 @@
     button.m2(@click.preventDefault.capture='minify') Minify
     button.m2(@click.preventDefault.capture='filter') Filter
     button.m2(@click.preventDefault.capture='clear') Clear
+    button.m2(@click.preventDefault.capture='decodeBase64Gzip') Decode Base64+Gzip
     button.m2(:disabled='history.length === 0' :class='{disabled: history.length == 0}' @click.preventDefault.capture='undo') Undo
   .row.m8
     textarea(
@@ -194,6 +195,54 @@ export default {
       const { history } = this
       this.value = history.shift()
       this.history = history
+    },
+    async decodeBase64Gzip() {
+      this.pushHistory()
+      
+      // Check for Compression Streams API support
+      if (typeof DecompressionStream === 'undefined') {
+        this.err = 'Your browser does not support the required Compression Streams API. Please use a modern browser like Chrome 80+, Edge 79+, or Opera 67+.'
+        return
+      }
+      
+      try {
+        this.err = null
+        
+        // Check if the input is empty
+        if (!this.value.trim()) {
+          this.err = 'Please paste a base64-encoded gzipped string into the text area.'
+          return
+        }
+        
+        // Decode base64
+        const base64Data = this.value.replace(/^data:.*?;base64,/, '')
+        let binaryString
+        try {
+          binaryString = atob(base64Data)
+        } catch (e) {
+          this.err = 'Invalid base64 input. Please provide a valid base64-encoded string.'
+          return
+        }
+        
+        // Convert binary string to Uint8Array
+        const len = binaryString.length
+        const bytes = new Uint8Array(len)
+        for (let i = 0; i < len; i++) {
+          bytes[i] = binaryString.charCodeAt(i)
+        }
+        
+        // Decompress using Compression Streams API
+        const decompressionStream = new DecompressionStream('gzip')
+        const decompressedStream = new Response(
+          new Blob([bytes]).stream().pipeThrough(decompressionStream)
+        )
+        
+        const decompressed = await decompressedStream.text()
+        this.value = decompressed
+      } catch (err) {
+        console.error('Failed to decode base64 and gunzip:', err)
+        this.err = 'Failed to decode. The input might not be a valid gzipped base64 string or there was an error during decompression.'
+      }
     },
     onEditorChange (newValue) {
       // eslint-disable-next-line
