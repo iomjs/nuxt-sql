@@ -54,7 +54,7 @@ export default {
       value: '',
       history: [],
       maxHistory: 10,
-      lineBreakInterval: 10000,
+      lineBreakInterval: 8000,
       textareaConfig: {
         lang: 'pgsql',
         rows: 20,
